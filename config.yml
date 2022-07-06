@@ -1,0 +1,52 @@
+#     -   -   -   -   -   -   -   -   -
+#              - CropsPlus -
+#              by Binekrasik
+#     -   -   -   -   -   -   -   -   -
+#     > Configuration File
+
+#     -   -   -   -   -   -
+#                      
+#       REPLANTING CROPS   
+#                      
+#     -   -   -   -   -   -
+
+# -> Replanting crops by right-clicking on them
+# > Default value: true
+enable-rightclick-replant: true
+
+
+#     -   -   -   -   -   -
+#                      
+#       GROWTH PARTICLES
+#                      
+#     -   -   -   -   -   -
+
+# -> Displaying growth particles from crop's age
+# ! If you (or others) are experiencing delays near crops, I recommend turning off or reducing particles.
+growth-particles:
+  # -> Enable particles?
+  # > Default value: true
+  enabled: true
+
+  # -> How far should the particles be able to see?
+  # > Default value: 15
+  display-radius: 15
+
+  # -> How many particles to display per 5 ticks?
+  # > Default value: 4
+  amount: 4
+
+  # -> What colour should the particles be once the crop has grown?
+  # > Default value: 155, 255, 100
+  grown-rgb: 155, 255, 100
+
+  # -> What colour should the particles be during crop stages?
+  # [i] Beetroots have only 4 stages. For this, the stages that be used are marked as Beetroor.
+  # > Default value: 50, 155, 255
+  stage1-rgb: 255, 255, 255 #Beetroot
+  stage2-rgb: 255, 219, 219
+  stage3-rgb: 248, 234, 195 #Beetroot
+  stage4-rgb: 225, 252, 191
+  stage5-rgb: 176, 255, 180 #Beetroot
+  stage6-rgb: 142, 255, 255
+  stage7-rgb: 133, 196, 255 #Beetroot
