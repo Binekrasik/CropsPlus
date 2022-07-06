@@ -20,3 +20,6 @@ cropsplus.reload | op | Allow or deny to use /crops reload command.
 
 ### Suggestions & Issues
 You can post and report your suggestions or issues at [Issues Page](https://github.com/Binekrasik/CropsPlus/issues)
+
+### Disclaimer
+If you want to use my code in your project, you must list me as the author of the code used.
