@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class CropsPlus extends JavaPlugin {
-	public String version = "v1.0";
+	public String version = "v1.2";
 	
 	public void onEnable() {
 		this.saveDefaultConfig();
