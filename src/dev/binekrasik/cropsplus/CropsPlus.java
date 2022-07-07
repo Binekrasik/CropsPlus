@@ -27,9 +27,10 @@ public class CropsPlus extends JavaPlugin {
 		Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, () -> {
 			if (getConfig().getBoolean("growth-particles.enabled")) {
 				for (Player p : Bukkit.getOnlinePlayers()) {
-					int radius = getConfig().getInt("growth-particles.display-radius");;
-					Location loc = p.getLocation();
-					World world = loc.getWorld();
+					if (!getConfig().getStringList("disabled-worlds").contains(p.getLocation().getWorld().getName())) {
+						int radius = getConfig().getInt("growth-particles.display-radius");
+						Location loc = p.getLocation();
+						World world = loc.getWorld();
 						for (int x = -radius; x < radius; x++) {
 						    for (int y = -radius; y < radius; y++) {
 						        for (int z = -radius; z < radius; z++) {
@@ -98,6 +99,7 @@ public class CropsPlus extends JavaPlugin {
 						            }
 						        }
 						    }
+						}
 					}
 				}
 			}

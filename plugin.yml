@@ -2,7 +2,7 @@ name: CropsPlus
 description: Have a better crops, by Binekrasik!
 main: dev.binekrasik.cropsplus.CropsPlus
 author: Binekrasik
-version: 1.0
+version: 1.2
 api-version: 1.14
 commands:
   crops:

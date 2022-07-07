@@ -4,6 +4,23 @@
 #     -   -   -   -   -   -   -   -   -
 #     > Configuration File
 
+# ! Disclaimer: Please don't use the TAB key in .yml configuration files, because the Bukkit can't deal with it. Seriously, don't use the TAB
+
+# -> If you don't want the feature to be enabled in some worlds, you can list them here.
+# ! This is CASE-SENSITIVE
+disabled-worlds:
+  - Example
+  - World2
+  - Something
+
+# -> You can list farmland-protected worlds here.
+# [i] Protecting farmland means that an entity will not be able to turn it into dirt if it jumps on it.
+# ! This is CASE-SENSITIVE
+farmland-protection:
+  - Example
+  - Something
+  - World2
+
 #     -   -   -   -   -   -
 #                      
 #       REPLANTING CROPS   
@@ -41,12 +58,12 @@ growth-particles:
   grown-rgb: 155, 255, 100
 
   # -> What colour should the particles be during crop stages?
-  # [i] Beetroots have only 4 stages. For this, the stages that be used are marked as Beetroor.
+  # [i] Beetroots have only 4 stages. For this, the stages that be used are marked as Beetroot.
   # > Default value: 50, 155, 255
   stage1-rgb: 255, 255, 255 #Beetroot
-  stage2-rgb: 255, 219, 219
-  stage3-rgb: 248, 234, 195 #Beetroot
-  stage4-rgb: 225, 252, 191
-  stage5-rgb: 176, 255, 180 #Beetroot
-  stage6-rgb: 142, 255, 255
-  stage7-rgb: 133, 196, 255 #Beetroot
+  stage2-rgb: 255, 171, 171
+  stage3-rgb: 255, 225, 143 #Beetroot
+  stage4-rgb: 202, 255, 135
+  stage5-rgb: 120, 255, 127 #Beetroot
+  stage6-rgb: 117, 255, 255
+  stage7-rgb: 97, 179, 255 #Beetroot

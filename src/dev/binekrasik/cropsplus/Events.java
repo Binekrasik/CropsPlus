@@ -1,24 +1,24 @@
 package dev.binekrasik.cropsplus;
 
+import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.Ageable;
 import org.bukkit.block.data.BlockData;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.entity.EntityChangeBlockEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
 public class Events implements Listener {
 	private CropsPlus plugin = CropsPlus.getPlugin(CropsPlus.class);
-	private FileConfiguration config = plugin.getConfig();
 	
 	@EventHandler
 	public void onPlayerRightClickCrop(PlayerInteractEvent event) {
-		if (config.getBoolean("enable-rightclick-replant")) {
+		if (plugin.getConfig().getBoolean("enable-rightclick-replant")) {
 			if (event.getAction() == Action.RIGHT_CLICK_BLOCK) {
 				if (event.getClickedBlock().getBlockData() instanceof Ageable) {
 					Block cblock = event.getClickedBlock();
@@ -33,6 +33,15 @@ public class Events implements Listener {
 						cblock.setBlockData(bdata);
 					}
 				}
+			}
+		}
+	}
+	
+	@EventHandler
+	public void onEntityTurnsFarmlandIntoDirt(EntityChangeBlockEvent event) {
+		if (plugin.getConfig().getStringList("farmland-protection").contains(event.getEntity().getWorld().getName())) {
+			if (event.getBlock().getType() == Material.FARMLAND && event.getTo() == Material.DIRT) {
+				event.setCancelled(true);
 			}
 		}
 	}
