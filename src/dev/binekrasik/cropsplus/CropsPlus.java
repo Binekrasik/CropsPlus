@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class CropsPlus extends JavaPlugin {
-	public String version = "v1.2";
+	public String version = "1.2.1";
 	
 	public void onEnable() {
 		this.saveDefaultConfig();
@@ -45,50 +45,50 @@ public class CropsPlus extends JavaPlugin {
 							            		int age = ((Ageable)block.getBlockData()).getAge();
 							            		if (block.getType() == Material.BEETROOT) {
 							            			switch (age) {
-							            			case 1:
+							            			case 0:
 							            				String[] rgb1 = getConfig().getString("growth-particles.stage1-rgb").split(", ");
 							            				rgbParticles(rgb1, block);
 							            				break;
-							            			case 2:
+							            			case 1:
 							            				String[] rgb2 = getConfig().getString("growth-particles.stage3-rgb").split(", ");
 							            				rgbParticles(rgb2, block);
 							            				break;
-							            			case 3:
+							            			case 2:
 							            				String[] rgb3 = getConfig().getString("growth-particles.stage5-rgb").split(", ");
 							            				rgbParticles(rgb3, block);
 							            				break;
-							            			case 4:
+							            			case 3:
 							            				String[] rgb4 = getConfig().getString("growth-particles.stage7-rgb").split(", ");
 							            				rgbParticles(rgb4, block);
 							            				break;
 							            			}
 							            		} else {
 							            			switch (age) {
-							            			case 1:
+							            			case 0:
 							            				String[] rgb1 = getConfig().getString("growth-particles.stage1-rgb").split(", ");
 							            				rgbParticles(rgb1, block);
 							            				break;
-							            			case 2:
+							            			case 1:
 							            				String[] rgb2 = getConfig().getString("growth-particles.stage2-rgb").split(", ");
 							            				rgbParticles(rgb2, block);
 							            				break;
-							            			case 3:
+							            			case 2:
 							            				String[] rgb3 = getConfig().getString("growth-particles.stage3-rgb").split(", ");
 							            				rgbParticles(rgb3, block);
 							            				break;
-							            			case 4:
+							            			case 3:
 							            				String[] rgb4 = getConfig().getString("growth-particles.stage4-rgb").split(", ");
 							            				rgbParticles(rgb4, block);
 							            				break;
-							            			case 5:
+							            			case 4:
 							            				String[] rgb5 = getConfig().getString("growth-particles.stage5-rgb").split(", ");
 							            				rgbParticles(rgb5, block);
 							            				break;
-							            			case 6:
+							            			case 5:
 							            				String[] rgb6 = getConfig().getString("growth-particles.stage6-rgb").split(", ");
 							            				rgbParticles(rgb6, block);
 							            				break;
-							            			case 7:
+							            			case 6:
 							            				String[] rgb7 = getConfig().getString("growth-particles.stage7-rgb").split(", ");
 							            				rgbParticles(rgb7, block);
 							            				break;
