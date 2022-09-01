@@ -3,7 +3,7 @@
 CropsPlus is a plugin that enchances minecraft's vanilla crops mechanics and makes them a lot better.
 
 ### Features
-- The plugin is fully customizable in the configuration file.
+- The plugin is 99% customizable in the configuration file.
 - Right-clicking on the crops drops the loot and replants them.
 - The growth detector indicates at what level the crop is.
 - I implement every good idea to the plugin.
