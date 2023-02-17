@@ -7,7 +7,6 @@ CropsPlus is a plugin that enchances minecraft's vanilla crops mechanics and mak
 - Right-clicking on the crops drops the loot and replants them.
 - The growth detector indicates at what level the crop is.
 - I implement every good idea to the plugin.
-- And many more cool features coming soon!
 
 ### Commands
 /crops help -> List of commands
