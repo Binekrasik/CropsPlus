@@ -35,6 +35,9 @@ public class CropsPlus extends JavaPlugin {
 						    for (int y = -radius; y < radius; y++) {
 						        for (int z = -radius; z < radius; z++) {
 						            Block block = world.getBlockAt(loc.getBlockX()+x, loc.getBlockY()+y, loc.getBlockZ()+z);
+						            
+						            if (block.getType().equals(Material.BAMBOO) || block.getType().equals(Material.SUGAR_CANE)) return;
+						            
 						            if (block.getBlockData() != null) {
 							            if (block.getBlockData() instanceof Ageable) {
 							            	if (((Ageable)block.getBlockData()).getAge() >= ((Ageable)block.getBlockData()).getMaximumAge()) {

@@ -24,12 +24,17 @@ public class Events implements Listener {
 					if (event.getClickedBlock().getBlockData() instanceof Ageable) {
 						Block cblock = event.getClickedBlock();
 						BlockData bdata = cblock.getBlockData();
+						
+						if (cblock.getType().equals(Material.BAMBOO) || cblock.getType().equals(Material.SUGAR_CANE)) return;
+						
 						if (((Ageable)bdata).getAge() >= ((Ageable)bdata).getMaximumAge()) {
 							event.getPlayer().playSound(event.getPlayer().getLocation(), Sound.BLOCK_GRASS_BREAK, 100, 1);
 							cblock.getLocation().getWorld().spawnParticle(Particle.BLOCK_CRACK, cblock.getLocation().getX() + 0.5, cblock.getLocation().getY() + 0.5, cblock.getLocation().getZ() + 0.5, 50, 0.25, 0.25, 0.25, bdata);
+							
 							for (ItemStack drop : cblock.getDrops()) {
 								cblock.getLocation().getWorld().dropItem(cblock.getLocation(), drop);
 							}
+							
 							((Ageable)bdata).setAge(0);
 							cblock.setBlockData(bdata);
 						}
