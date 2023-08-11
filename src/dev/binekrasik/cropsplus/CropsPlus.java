@@ -36,70 +36,70 @@ public class CropsPlus extends JavaPlugin {
 						        for (int z = -radius; z < radius; z++) {
 						            Block block = world.getBlockAt(loc.getBlockX()+x, loc.getBlockY()+y, loc.getBlockZ()+z);
 						            
-						            if (block.getType().equals(Material.BAMBOO) || block.getType().equals(Material.SUGAR_CANE)) return;
-						            
-						            if (block.getBlockData() != null) {
-							            if (block.getBlockData() instanceof Ageable) {
-							            	if (((Ageable)block.getBlockData()).getAge() >= ((Ageable)block.getBlockData()).getMaximumAge()) {
-							            		String[] rgb = getConfig().getString("growth-particles.grown-rgb").split(", ");
-							            		Particle.DustOptions dustOptions = new Particle.DustOptions(Color.fromRGB(Integer.parseInt(rgb[0]), Integer.parseInt(rgb[1]), Integer.parseInt(rgb[2])), 1);
-								    			block.getLocation().getWorld().spawnParticle(Particle.REDSTONE, block.getLocation().getX() + 0.5, block.getLocation().getY() + 1, block.getLocation().getZ() + 0.5, getConfig().getInt("growth-particles.amount"), 0, 0.15, 0, dustOptions);
-							            	} else {
-							            		int age = ((Ageable)block.getBlockData()).getAge();
-							            		if (block.getType() == Material.BEETROOT) {
-							            			switch (age) {
-							            			case 0:
-							            				String[] rgb1 = getConfig().getString("growth-particles.stage1-rgb").split(", ");
-							            				rgbParticles(rgb1, block);
-							            				break;
-							            			case 1:
-							            				String[] rgb2 = getConfig().getString("growth-particles.stage3-rgb").split(", ");
-							            				rgbParticles(rgb2, block);
-							            				break;
-							            			case 2:
-							            				String[] rgb3 = getConfig().getString("growth-particles.stage5-rgb").split(", ");
-							            				rgbParticles(rgb3, block);
-							            				break;
-							            			case 3:
-							            				String[] rgb4 = getConfig().getString("growth-particles.stage7-rgb").split(", ");
-							            				rgbParticles(rgb4, block);
-							            				break;
-							            			}
-							            		} else {
-							            			switch (age) {
-							            			case 0:
-							            				String[] rgb1 = getConfig().getString("growth-particles.stage1-rgb").split(", ");
-							            				rgbParticles(rgb1, block);
-							            				break;
-							            			case 1:
-							            				String[] rgb2 = getConfig().getString("growth-particles.stage2-rgb").split(", ");
-							            				rgbParticles(rgb2, block);
-							            				break;
-							            			case 2:
-							            				String[] rgb3 = getConfig().getString("growth-particles.stage3-rgb").split(", ");
-							            				rgbParticles(rgb3, block);
-							            				break;
-							            			case 3:
-							            				String[] rgb4 = getConfig().getString("growth-particles.stage4-rgb").split(", ");
-							            				rgbParticles(rgb4, block);
-							            				break;
-							            			case 4:
-							            				String[] rgb5 = getConfig().getString("growth-particles.stage5-rgb").split(", ");
-							            				rgbParticles(rgb5, block);
-							            				break;
-							            			case 5:
-							            				String[] rgb6 = getConfig().getString("growth-particles.stage6-rgb").split(", ");
-							            				rgbParticles(rgb6, block);
-							            				break;
-							            			case 6:
-							            				String[] rgb7 = getConfig().getString("growth-particles.stage7-rgb").split(", ");
-							            				rgbParticles(rgb7, block);
-							            				break;
-							            			}
-							            		}
-							            	}
+							            if (block.getBlockData() != null) {
+								            if (block.getBlockData() instanceof Ageable) {
+								            	if (block.getType() != Material.BAMBOO && block.getType() != Material.BAMBOO_SAPLING && block.getType() != Material.SUGAR_CANE) {
+									            	if (((Ageable)block.getBlockData()).getAge() >= ((Ageable)block.getBlockData()).getMaximumAge()) {
+									            		String[] rgb = getConfig().getString("growth-particles.grown-rgb").split(", ");
+										            	Particle.DustOptions dustOptions = new Particle.DustOptions(Color.fromRGB(Integer.parseInt(rgb[0]), Integer.parseInt(rgb[1]), Integer.parseInt(rgb[2])), 1);
+											    		block.getLocation().getWorld().spawnParticle(Particle.REDSTONE, block.getLocation().getX() + 0.5, block.getLocation().getY() + 1, block.getLocation().getZ() + 0.5, getConfig().getInt("growth-particles.amount"), 0, 0.15, 0, dustOptions);
+									            	} else {
+									            		int age = ((Ageable)block.getBlockData()).getAge();
+									            		if (block.getType() == Material.BEETROOT) {
+									            			switch (age) {
+									            			case 0:
+									            				String[] rgb1 = getConfig().getString("growth-particles.stage1-rgb").split(", ");
+									            				rgbParticles(rgb1, block);
+									            				break;
+									            			case 1:
+									            				String[] rgb2 = getConfig().getString("growth-particles.stage3-rgb").split(", ");
+									            				rgbParticles(rgb2, block);
+									            				break;
+									            			case 2:
+									            				String[] rgb3 = getConfig().getString("growth-particles.stage5-rgb").split(", ");
+									            				rgbParticles(rgb3, block);
+									            				break;
+									            			case 3:
+									            				String[] rgb4 = getConfig().getString("growth-particles.stage7-rgb").split(", ");
+									            				rgbParticles(rgb4, block);
+									            				break;
+									            			}
+									            		} else {
+									            			switch (age) {
+									            			case 0:
+									            				String[] rgb1 = getConfig().getString("growth-particles.stage1-rgb").split(", ");
+									            				rgbParticles(rgb1, block);
+									            				break;
+									            			case 1:
+									            				String[] rgb2 = getConfig().getString("growth-particles.stage2-rgb").split(", ");
+									            				rgbParticles(rgb2, block);
+									            				break;
+									            			case 2:
+									            				String[] rgb3 = getConfig().getString("growth-particles.stage3-rgb").split(", ");
+									            				rgbParticles(rgb3, block);
+									            				break;
+									            			case 3:
+									            				String[] rgb4 = getConfig().getString("growth-particles.stage4-rgb").split(", ");
+									            				rgbParticles(rgb4, block);
+									            				break;
+									            			case 4:
+									            				String[] rgb5 = getConfig().getString("growth-particles.stage5-rgb").split(", ");
+									            				rgbParticles(rgb5, block);
+									            				break;
+									            			case 5:
+									            				String[] rgb6 = getConfig().getString("growth-particles.stage6-rgb").split(", ");
+									            				rgbParticles(rgb6, block);
+									            				break;
+									            			case 6:
+									            				String[] rgb7 = getConfig().getString("growth-particles.stage7-rgb").split(", ");
+									            				rgbParticles(rgb7, block);
+									            				break;
+									            			}
+									            		}
+									            	}
+								            	}
+								            }
 							            }
-						            }
 						        }
 						    }
 						}
