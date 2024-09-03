@@ -1,21 +1,21 @@
 # Crops++
-### What is CropsPlus?
+### What is Crops++?
 CropsPlus is a plugin that enchances minecraft's vanilla crops mechanics and makes them a lot better.
 
 ### Features
-- The plugin is 99% customizable in the configuration file.
-- Right-clicking on the crops drops the loot and replants them.
-- The growth detector indicates at what level the crop is.
-- I implement every good idea to the plugin.
+- The plugin can be fully configured in config.yml.
+- Right-clicking on a crop drops its loot and replants it.
+- Growth detector indicates at what level the crop is.
+- Any ideas and enhancements are welcome!
 
 ### Commands
-/crops help -> List of commands
+/crops help -> A list of all available commands
 /crops reload -> Reloads the config
 
 ### Permissions
 *Permission | Default | Description*
 
-cropsplus.reload | op | Allow or deny to use /crops reload command.
+cropsplus.reload | op | Allows or denies the usage of /crops reload.
 
 ### Suggestions & Issues
-You can post and report your suggestions or issues at [Issues Page](https://github.com/Binekrasik/CropsPlus/issues)
+Issues and suggestions can be reported on [Issues Page](https://github.com/Binekrasik/CropsPlus/issues). Please don't report issues anywhere else.
